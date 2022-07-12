@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./WeatherSearch.css";
 
 export default function WeatherSearch() {
   const [submit, setSubmit] = useState(false);
@@ -39,7 +40,7 @@ export default function WeatherSearch() {
         <div className="container-fluid">
           <form className="d-flex" id="search-form" onSubmit={handleSubmit}>
             <input
-              className="form-control me-2"
+              className="form-control me-5"
               type="search"
               placeholder="Enter a City"
               id="search-input"
@@ -73,22 +74,31 @@ export default function WeatherSearch() {
       <div className="WeatherSearch">
         {form}
         <h1>{city}</h1>
-        <h2>Last updated: 12:05</h2>
-        <ul>
-          <li>
-            <i className="fa-solid fa-droplet"></i> : {Math.round(humidity)}%
-          </li>
-          <li>
-            <i className="fa-solid fa-wind"></i> : {Math.round(wind)}km/h
-          </li>
-          <li>Feels like:{feel}℃</li>
-          <li>{Math.round(temperature)}℃</li>
-          <li>
-            <img src={icon} alt={description} />
-          </li>
 
-          <li>{description}</li>
-        </ul>
+        <div className="row">
+          <div className="col-6 weather-details">
+            <h2 className="LastUpdated">Last updated: 12:05</h2>
+            <ul>
+              <li>
+                <i className="fa-solid fa-droplet"></i> : {Math.round(humidity)}
+                %
+              </li>
+              <li>
+                <i className="fa-solid fa-wind"></i> : {Math.round(wind)}km/h
+              </li>
+              <li>Feels like: {Math.round(feel)}℃</li>
+            </ul>
+          </div>
+          <div className="col-6 current-weather">
+            <ul>
+              <li>{Math.round(temperature)}℃</li>
+              <li>
+                <img src={icon} alt={description} />
+              </li>
+              <li>{description}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   } else {
@@ -96,17 +106,31 @@ export default function WeatherSearch() {
       <div className="WeatherSearch">
         {form}
         <h1>{city}</h1>
-        <ul>
-          <li>Temperature : {Math.round(temperature)}℃</li>
-          <li>Description : {description}</li>
-          <li>
-            <i className="fa-solid fa-droplet"></i> : {Math.round(humidity)}%
-          </li>
-          <li>Wind : {Math.round(wind)}km/h</li>
-          <li>
-            <img src={icon} alt={description} />
-          </li>
-        </ul>
+
+        <div className="row">
+          <div className="col-6 weather-details">
+            <h2 className="LastUpdated">Last updated: 12:05</h2>
+            <ul>
+              <li>
+                <i className="fa-solid fa-droplet"></i> : {Math.round(humidity)}
+                %
+              </li>
+              <li>
+                <i className="fa-solid fa-wind"></i> : {Math.round(wind)}km/h
+              </li>
+              <li>Feels like: {Math.round(feel)}℃</li>
+            </ul>
+          </div>
+          <div className="col-6 current-weather">
+            <ul>
+              <li>{Math.round(temperature)}℃</li>
+              <li>
+                <img src={icon} alt={description} />
+              </li>
+              <li>{description}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
