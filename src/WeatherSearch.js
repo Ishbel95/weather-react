@@ -25,31 +25,32 @@ export default function WeatherSearch() {
       feel: response.data.main.feels_like,
       icon: `http://openweathermap.org/img/wn/${iconSource}@2x.png`,
     });
-    if (weather.icon === "01d" || weather.icon === "01n") {
-      iconSource = `./images/clearsky.png`;
-    } else if (weather.icon === "02d" || weather.icon === "02n") {
-      iconSource = `./images/sunandcloud.png`;
-    } else if (
-      weather.icon === "03d" ||
-      weather.icon === "03n" ||
-      weather.icon === "04d" ||
-      weather.icon === "04n"
-    ) {
-      iconSource = `./images/cloudy.png`;
-    } else if (
-      weather.icon === "09d" ||
-      weather.icon === "09n" ||
-      weather.icon === "10d" ||
-      weather.icon === "10n"
-    ) {
-      iconSource = `./images/raining.png`;
-    } else if (weather.icon === "11d" || weather.icon === "11n") {
-      iconSource = `./images/thunder.png`;
-    } else if (weather.icon === "13d" || weather.icon === "13n") {
-      iconSource = `./images/snowing.png`;
-    } else if (weather.icon === "50d" || weather.icon === "50n") {
-      iconSource = `./images/fog.png`;
-    }
+
+    // if (weather.icon === "01d" || weather.icon === "01n") {
+    //   iconSource = require(`./images/clearsky.png`);
+    // } else if (weather.icon === "02d" || weather.icon === "02n") {
+    //   iconSource = require(`./images/sunandcloud.png`);
+    // } else if (
+    //   weather.icon === "03d" ||
+    //   weather.icon === "03n" ||
+    //   weather.icon === "04d" ||
+    //   weather.icon === "04n"
+    // ) {
+    //   iconSource = require(`./images/Cloudy.png`);
+    // } else if (
+    //   weather.icon === "09d" ||
+    //   weather.icon === "09n" ||
+    //   weather.icon === "10d" ||
+    //   weather.icon === "10n"
+    // ) {
+    //   iconSource = require(`./images/raining.png`);
+    // } else if (weather.icon === "11d" || weather.icon === "11n") {
+    //   iconSource = require(`./images/thunder.png`);
+    // } else if (weather.icon === "13d" || weather.icon === "13n") {
+    //   iconSource = require(`./images/snowing.png`);
+    // } else if (weather.icon === "50d" || weather.icon === "50n") {
+    //   iconSource = require(`./images/fog.png`);
+    // }
     setSubmit(true);
     console.log(response);
   }
@@ -105,7 +106,6 @@ export default function WeatherSearch() {
       <div className="WeatherSearch">
         {form}
         <h1>{city}</h1>
-
         <div className="row">
           <div className="col-6 weather-details">
             <h2 className="LastUpdated">Last updated: 12:05</h2>
