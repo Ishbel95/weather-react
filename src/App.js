@@ -12,6 +12,7 @@ function App() {
             <a
               href="https://github.com/Ishbel95/Vanilla-weather-app"
               target="_blank"
+              rel="noreferrer"
               title="Github link"
             >
               Open-source code
