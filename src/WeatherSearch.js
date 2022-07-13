@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
+import "./images/Cloudy.png";
+import "./images/clearsky.png";
+import "./images/fog.png";
+import "./images/raining.png";
+import "./images/snowing.png";
+import "./images/sun.png";
+import "./images/sunandcloud.png";
+import "./images/thunder.png";
 
 export default function WeatherSearch() {
   const [submit, setSubmit] = useState(false);
@@ -8,14 +16,40 @@ export default function WeatherSearch() {
   const [weather, setWeather] = useState({});
 
   function showWeather(response) {
+    let iconSource = response.data.weather[0].icon;
     setWeather({
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       feel: response.data.main.feels_like,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: `http://openweathermap.org/img/wn/${iconSource}@2x.png`,
     });
+    if (weather.icon === "01d" || weather.icon === "01n") {
+      iconSource = `./images/clearsky.png`;
+    } else if (weather.icon === "02d" || weather.icon === "02n") {
+      iconSource = `./images/sunandcloud.png`;
+    } else if (
+      weather.icon === "03d" ||
+      weather.icon === "03n" ||
+      weather.icon === "04d" ||
+      weather.icon === "04n"
+    ) {
+      iconSource = `./images/cloudy.png`;
+    } else if (
+      weather.icon === "09d" ||
+      weather.icon === "09n" ||
+      weather.icon === "10d" ||
+      weather.icon === "10n"
+    ) {
+      iconSource = `./images/raining.png`;
+    } else if (weather.icon === "11d" || weather.icon === "11n") {
+      iconSource = `./images/thunder.png`;
+    } else if (weather.icon === "13d" || weather.icon === "13n") {
+      iconSource = `./images/snowing.png`;
+    } else if (weather.icon === "50d" || weather.icon === "50n") {
+      iconSource = `./images/fog.png`;
+    }
     setSubmit(true);
     console.log(response);
   }
@@ -32,7 +66,7 @@ export default function WeatherSearch() {
   let form = (
     <div className="WeatherSearch">
       <nav className="navbar navbar-light d-flex">
-        <div className="container-fluid">
+        <div className="container-fluid justify-content-between">
           <form className="d-flex" id="search-form" onSubmit={handleSubmit}>
             <input
               className="form-control"
@@ -42,7 +76,7 @@ export default function WeatherSearch() {
               title="Search a city"
               onChange={updateCity}
             />
-            <div className="d-flex justify-content-end">
+            <div className="d-flex">
               <button
                 id="search-button"
                 className="btn btn-outline-success button-one"
@@ -91,7 +125,11 @@ export default function WeatherSearch() {
             <ul>
               <li>{Math.round(weather.temperature)}℃</li>
               <li>
-                <img src={weather.icon} alt={weather.description} />
+                <img
+                  className="current-weather-image"
+                  src={weather.icon}
+                  alt={weather.description}
+                />
               </li>
               <li>{weather.description}</li>
             </ul>
@@ -122,7 +160,11 @@ export default function WeatherSearch() {
             <ul>
               <li>{Math.round(14)}℃</li>
               <li>
-                <img src={weather.icon} alt={weather.description} />
+                <img
+                  className="current-weather-image"
+                  src={require("./images/Cloudy.png")}
+                  alt={weather.description}
+                />
               </li>
               <li>Cloudy</li>
             </ul>

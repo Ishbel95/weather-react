@@ -6,6 +6,20 @@ function App() {
     <div className="weather-app">
       <header className="App-header"></header>
       <WeatherSearch />
+      <footer>
+        <div class="open-source-link">
+          <span>
+            <a
+              href="https://github.com/Ishbel95/Vanilla-weather-app"
+              target="_blank"
+              title="Github link"
+            >
+              Open-source code
+            </a>
+            {""} by Ishbel Fahey-Theaker
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }

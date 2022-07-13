@@ -44,3 +44,6 @@ h1 {
   text-align: center;
   list-style-type: none;
 }
+.current-weather-image {
+  width: 100%;
+}
