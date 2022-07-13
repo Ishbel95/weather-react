@@ -153,7 +153,7 @@ export default function WeatherSearch() {
               <li>
                 <i className="fa-solid fa-wind"></i> : {Math.round(10)}km/h
               </li>
-              <li>Feels like: {Math.round(15)}℃</li>
+              <li>Feels like: {Math.round(15.6)}℃</li>
             </ul>
           </div>
           <div className="col-6 current-weather">
