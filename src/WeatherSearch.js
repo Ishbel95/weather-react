@@ -4,24 +4,19 @@ import "./WeatherSearch.css";
 
 export default function WeatherSearch() {
   const [submit, setSubmit] = useState(false);
-  const [city, setCity] = useState(null);
-  const [temperature, setTemperature] = useState(null);
-  const [description, setDescription] = useState(null);
-  const [humidity, setHumidity] = useState(null);
-  const [wind, setWind] = useState(null);
-  const [feel, setFeel] = useState(null);
-  const [icon, setIcon] = useState(null);
+  const [city, setCity] = useState("City");
+  const [weather, setWeather] = useState({});
 
   function showWeather(response) {
-    const iconUrl = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+    setWeather({
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      feel: response.data.main.feels_like,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    });
     setSubmit(true);
-    setTemperature(response.data.main.temp);
-    setDescription(response.data.weather[0].description);
-    setHumidity(response.data.main.humidity);
-    setWind(response.data.wind.speed);
-    setFeel(response.data.main.feels_like);
-
-    setIcon(iconUrl);
     console.log(response);
   }
   function updateCity(event) {
@@ -80,22 +75,23 @@ export default function WeatherSearch() {
             <h2 className="LastUpdated">Last updated: 12:05</h2>
             <ul>
               <li>
-                <i className="fa-solid fa-droplet"></i> : {Math.round(humidity)}
-                %
+                <i className="fa-solid fa-droplet"></i> :{" "}
+                {Math.round(weather.humidity)}%
               </li>
               <li>
-                <i className="fa-solid fa-wind"></i> : {Math.round(wind)}km/h
+                <i className="fa-solid fa-wind"></i> :{" "}
+                {Math.round(weather.wind)}km/h
               </li>
-              <li>Feels like: {Math.round(feel)}℃</li>
+              <li>Feels like: {Math.round(weather.feel)}℃</li>
             </ul>
           </div>
           <div className="col-6 current-weather">
             <ul>
-              <li>{Math.round(temperature)}℃</li>
+              <li>{Math.round(weather.temperature)}℃</li>
               <li>
-                <img src={icon} alt={description} />
+                <img src={weather.icon} alt={weather.description} />
               </li>
-              <li>{description}</li>
+              <li>{weather.description}</li>
             </ul>
           </div>
         </div>
@@ -112,22 +108,23 @@ export default function WeatherSearch() {
             <h2 className="LastUpdated">Last updated: 12:05</h2>
             <ul>
               <li>
-                <i className="fa-solid fa-droplet"></i> : {Math.round(humidity)}
-                %
+                <i className="fa-solid fa-droplet"></i> :{" "}
+                {Math.round(weather.humidity)}%
               </li>
               <li>
-                <i className="fa-solid fa-wind"></i> : {Math.round(wind)}km/h
+                <i className="fa-solid fa-wind"></i> :{" "}
+                {Math.round(weather.wind)}km/h
               </li>
-              <li>Feels like: {Math.round(feel)}℃</li>
+              <li>Feels like: {Math.round(weather.feel)}℃</li>
             </ul>
           </div>
           <div className="col-6 current-weather">
             <ul>
-              <li>{Math.round(temperature)}℃</li>
+              <li>{Math.round(weather.temperature)}℃</li>
               <li>
-                <img src={icon} alt={description} />
+                <img src={weather.icon} alt={weather.description} />
               </li>
-              <li>{description}</li>
+              <li>{weather.description}</li>
             </ul>
           </div>
         </div>
