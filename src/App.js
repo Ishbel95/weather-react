@@ -16,7 +16,7 @@ function App() {
             >
               Open-source code
             </a>
-            {""} by Ishbel Fahey-Theaker
+            {""} by Ishbel Fahey-Theaker-Front end Developer
           </span>
         </div>
       </footer>
