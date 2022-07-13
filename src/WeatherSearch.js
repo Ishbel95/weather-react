@@ -2,13 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
 import "./images/Cloudy.png";
-import "./images/clearsky.png";
-import "./images/fog.png";
-import "./images/raining.png";
-import "./images/snowing.png";
-import "./images/sun.png";
-import "./images/sunandcloud.png";
-import "./images/thunder.png";
 
 export default function WeatherSearch() {
   const [submit, setSubmit] = useState(false);
