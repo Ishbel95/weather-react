@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
-import "./images/Cloudy.png";
-import "./images/clearsky.png";
-import "./images/fog.png";
-import "./images/raining.png";
-import "./images/snowing.png";
-import "./images/sun.png";
-import "./images/sunandcloud.png";
-import "./images/thunder.png";
+import "./images/cloudy.png";
+// import "./images/clearsky.png";
+// import "./images/fog.png";
+// import "./images/raining.png";
+// import "./images/snowing.png";
+// import "./images/sun.png";
+// import "./images/sunandcloud.png";
+// import "./images/thunder.png";
 
 export default function WeatherSearch() {
   const [submit, setSubmit] = useState(false);
@@ -162,7 +162,7 @@ export default function WeatherSearch() {
               <li>
                 <img
                   className="current-weather-image"
-                  src={require("./images/Cloudy.png")}
+                  src={require("./images/cloudy.png")}
                   alt={weather.description}
                 />
               </li>
