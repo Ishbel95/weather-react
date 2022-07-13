@@ -31,33 +31,35 @@ export default function WeatherSearch() {
   }
   let form = (
     <div className="WeatherSearch">
-      <nav className="Navigation navbar navbar-light">
+      <nav className="navbar navbar-light d-flex">
         <div className="container-fluid">
           <form className="d-flex" id="search-form" onSubmit={handleSubmit}>
             <input
-              className="form-control me-5"
+              className="form-control"
               type="search"
               placeholder="Enter a City"
               id="search-input"
               title="Search a city"
               onChange={updateCity}
             />
-            <button
-              id="search-button"
-              className="btn btn-outline-success"
-              type="submit"
-              title="Search button"
-            >
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </button>
-            <button
-              id="geo-location"
-              className="btn btn-outline-success"
-              type="submit"
-              title="Geo-location button"
-            >
-              <i className="fa-solid fa-location-arrow"></i>
-            </button>
+            <div className="d-flex justify-content-end">
+              <button
+                id="search-button"
+                className="btn btn-outline-success button-one"
+                type="submit"
+                title="Search button"
+              >
+                <i className="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <button
+                id="geo-location"
+                className="btn btn-outline-success"
+                type="submit"
+                title="Geo-location button"
+              >
+                <i className="fa-solid fa-location-arrow"></i>
+              </button>
+            </div>
           </form>
         </div>
       </nav>
@@ -101,30 +103,28 @@ export default function WeatherSearch() {
     return (
       <div className="WeatherSearch">
         {form}
-        <h1>{city}</h1>
+        <h1>London</h1>
 
         <div className="row">
           <div className="col-6 weather-details">
             <h2 className="LastUpdated">Last updated: 12:05</h2>
             <ul>
               <li>
-                <i className="fa-solid fa-droplet"></i> :{" "}
-                {Math.round(weather.humidity)}%
+                <i className="fa-solid fa-droplet"></i> : {Math.round(2.5)}%
               </li>
               <li>
-                <i className="fa-solid fa-wind"></i> :{" "}
-                {Math.round(weather.wind)}km/h
+                <i className="fa-solid fa-wind"></i> : {Math.round(10)}km/h
               </li>
-              <li>Feels like: {Math.round(weather.feel)}℃</li>
+              <li>Feels like: {Math.round(15)}℃</li>
             </ul>
           </div>
           <div className="col-6 current-weather">
             <ul>
-              <li>{Math.round(weather.temperature)}℃</li>
+              <li>{Math.round(14)}℃</li>
               <li>
                 <img src={weather.icon} alt={weather.description} />
               </li>
-              <li>{weather.description}</li>
+              <li>Cloudy</li>
             </ul>
           </div>
         </div>
