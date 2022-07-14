@@ -26,7 +26,7 @@ export default function LastUpdated(props) {
   return (
     <div>
       <h2 className="LastUpdated">
-        Last updated:{day}, {hours}:{minutes}
+        Last updated: {day}, {hours}:{minutes}
       </h2>
     </div>
   );
