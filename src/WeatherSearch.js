@@ -28,31 +28,6 @@ export default function WeatherSearch(props) {
       icon: response.data.weather[0].icon,
     });
 
-    // if (weather.icon === "01d" || weather.icon === "01n") {
-    //   iconSource = require(`./images/clearsky.png`);
-    // } else if (weather.icon === "02d" || weather.icon === "02n") {
-    //   iconSource = require(`./images/sunandcloud.png`);
-    // } else if (
-    //   weather.icon === "03d" ||
-    //   weather.icon === "03n" ||
-    //   weather.icon === "04d" ||
-    //   weather.icon === "04n"
-    // ) {
-    //   iconSource = require(`./images/cloudy.png`);
-    // } else if (
-    //   weather.icon === "09d" ||
-    //   weather.icon === "09n" ||
-    //   weather.icon === "10d" ||
-    //   weather.icon === "10n"
-    // ) {
-    //   iconSource = require(`./images/raining.png`);
-    // } else if (weather.icon === "11d" || weather.icon === "11n") {
-    //   iconSource = require(`./images/thunder.png`);
-    // } else if (weather.icon === "13d" || weather.icon === "13n") {
-    //   iconSource = require(`./images/snowing.png`);
-    // } else if (weather.icon === "50d" || weather.icon === "50n") {
-    //   iconSource = require(`./images/fog.png`);
-    // }
     setSubmit(true);
   }
   function updateCity(event) {

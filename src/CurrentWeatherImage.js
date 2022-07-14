@@ -1,4 +1,5 @@
 import React from "react";
+import "./CurrentWeatherImage.css";
 import "./images/clearsky.png";
 import "./images/fog.png";
 import "./images/raining.png";
@@ -10,29 +11,32 @@ import "./images/cloudy.png";
 
 export default function CurrentWeatherImage(props) {
   const iconMapping = {
-    "01d": "./images/sun.png",
-    "01n": "./images/sun.png",
-    "02n": "./images/sunandcloud.png",
-    "02d": "./images/sunandcloud.png",
-    "03d": "./images/cloudy.png",
-    "03n": "./images/cloudy.png",
-    "04d": "./images/cloudy.png",
-    "04n": "./images/cloudy.png",
-    "09d": "./images/raining.png",
-    "09n": "./images/raining.png",
-    "10d": "./images/raining.png",
-    "10n": "./images/raining.png",
-    "11d": "./images/thunder.png",
-    "11n": "./images/thunder.png",
-    "13d": "./images/snowing.png",
-    "13n": "./images/snowing.png",
-    "50d": "./images/fog.png",
-    "50n": "./images/fog.png",
+    "01d": require("./images/sun.png"),
+    "01n": require("./images/sun.png"),
+    "02n": require("./images/sunandcloud.png"),
+    "02d": require("./images/sunandcloud.png"),
+    "03d": require("./images/cloudy.png"),
+    "03n": require("./images/cloudy.png"),
+    "04d": require("./images/cloudy.png"),
+    "04n": require("./images/cloudy.png"),
+    "09d": require("./images/raining.png"),
+    "09n": require("./images/raining.png"),
+    "10d": require("./images/raining.png"),
+    "10n": require("./images/raining.png"),
+    "11d": require("./images/thunder.png"),
+    "11n": require("./images/thunder.png"),
+    "13d": require("./images/snowing.png"),
+    "13n": require("./images/snowing.png"),
+    "50d": require("./images/fog.png"),
+    "50n": require("./images/fog.png"),
   };
-  let newImage = iconMapping[props.icon];
   return (
     <div>
-      <img className="current-weather-image" src={newImage} alt={props.alt} />
+      <img
+        className="current-weather-image"
+        src={iconMapping[props.icon]}
+        alt={props.alt}
+      />
     </div>
   );
 }
