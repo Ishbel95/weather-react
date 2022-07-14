@@ -17,15 +17,15 @@ h1 {
 }
 
 .btn {
-  border-color: #ffffff;
-  background-color: #ffffff;
-  color: rgb(35, 34, 34);
+  border-color: #ffffff !important;
+  background-color: #ffffff !important;
+  color: rgb(35, 34, 34) !important;
   margin: 0.1em;
 }
 
 .btn:hover {
-  background-color: #a8ccfc;
-  border-color: #a8ccfc;
+  background-color: #a1c4fd !important;
+  border-color: #a1c4fd !important;
 }
 
 .LastUpdated {

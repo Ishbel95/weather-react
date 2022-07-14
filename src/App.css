@@ -1,6 +1,10 @@
+:root {
+  --primary-color: rgb(45, 44, 44);
+}
+
 .weather-app {
   font-family: "Quicksand", sans-serif;
-  color: rgb(45, 44, 44);
+  color: var(--primary-color);
   border: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   padding: 1em;
   display: block;
@@ -27,14 +31,4 @@
   100% {
     background-position: right;
   }
-}
-
-.open-source-link {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 9;
-}
-.open-source-link a {
-  text-decoration: none;
 }

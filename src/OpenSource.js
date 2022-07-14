@@ -8,7 +8,7 @@ export default function OpenSource() {
         <a
           href="https://github.com/Ishbel95/Vanilla-weather-app"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           title="Github link"
         >
           Open-source code

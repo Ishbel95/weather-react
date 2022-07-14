@@ -80,7 +80,7 @@ export default function WeatherSearch() {
             <div className="d-flex">
               <button
                 id="search-button"
-                className="btn btn-outline-success button-one"
+                className="btn button-one"
                 type="submit"
                 title="Search button"
               >
@@ -88,7 +88,7 @@ export default function WeatherSearch() {
               </button>
               <button
                 id="geo-location"
-                className="btn btn-outline-success"
+                className="btn"
                 type="submit"
                 title="Geo-location button"
               >
