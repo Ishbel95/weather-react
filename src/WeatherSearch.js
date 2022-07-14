@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
-import "./images/cloudy.png";
+
 import WeatherData from "./WeatherData";
-// import "./images/clearsky.png";
-// import "./images/fog.png";
-// import "./images/raining.png";
-// import "./images/snowing.png";
-// import "./images/sun.png";
-// import "./images/sunandcloud.png";
-// import "./images/thunder.png";
 
 export default function WeatherSearch(props) {
   const [submit, setSubmit] = useState(false);
@@ -24,8 +17,6 @@ export default function WeatherSearch(props) {
   }
 
   function showWeather(response) {
-    let iconSource = response.data.weather[0].icon;
-
     setWeather({
       city: response.data.name,
       temperature: response.data.main.temp,
@@ -34,7 +25,7 @@ export default function WeatherSearch(props) {
       wind: response.data.wind.speed,
       feel: response.data.main.feels_like,
       date: new Date(response.data.dt * 1000),
-      icon: `http://openweathermap.org/img/wn/${iconSource}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
 
     // if (weather.icon === "01d" || weather.icon === "01n") {

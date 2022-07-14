@@ -1,5 +1,6 @@
 import React from "react";
 import LastUpdated from "./LastUpdated";
+import CurrentWeatherImage from "./CurrentWeatherImage";
 
 export default function WeatherData(props) {
   return (
@@ -27,9 +28,8 @@ export default function WeatherData(props) {
               {Math.round(props.data.temperature)}℃ | ℉
             </li>
             <li>
-              <img
-                className="current-weather-image"
-                src={props.data.icon}
+              <CurrentWeatherImage
+                icon={props.data.icon}
                 alt={props.data.description}
               />
             </li>
