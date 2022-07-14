@@ -36,7 +36,7 @@ export default function WeatherSearch() {
     //   weather.icon === "04d" ||
     //   weather.icon === "04n"
     // ) {
-    //   iconSource = require(`./images/Cloudy.png`);
+    //   iconSource = require(`./images/cloudy.png`);
     // } else if (
     //   weather.icon === "09d" ||
     //   weather.icon === "09n" ||
