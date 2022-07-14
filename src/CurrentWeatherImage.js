@@ -11,8 +11,8 @@ import "./images/cloudy.png";
 
 export default function CurrentWeatherImage(props) {
   const iconMapping = {
-    "01d": require("./images/sun.png"),
-    "01n": require("./images/sun.png"),
+    "01d": require("./images/clearsky.png"),
+    "01n": require("./images/clearsky.png"),
     "02n": require("./images/sunandcloud.png"),
     "02d": require("./images/sunandcloud.png"),
     "03d": require("./images/cloudy.png"),

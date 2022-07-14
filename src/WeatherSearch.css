@@ -26,16 +26,3 @@ h1 {
   background-color: #a1c4fd !important;
   border-color: #a1c4fd !important;
 }
-
-.weather-details ul {
-  list-style-type: none;
-  font-size: 1.3em;
-}
-.weather-details li {
-  padding-bottom: 10%;
-}
-.current-weather ul {
-  font-size: 1.3rem;
-  text-align: center;
-  list-style-type: none;
-}

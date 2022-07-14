@@ -1,17 +1,18 @@
 import React from "react";
 import LastUpdated from "./LastUpdated";
 import CurrentWeatherImage from "./CurrentWeatherImage";
+import "./WeatherData.css";
 
 export default function WeatherData(props) {
   return (
     <div className="WeatherData">
-      <h1>{props.data.city}</h1>
+      <h1 className="mt-1">{props.data.city}</h1>
       <div className="row">
-        <div className="col-6 weather-details">
+        <div className="col-6 weather-details mt-1">
           <LastUpdated currentDate={props.data.date} />
           <ul>
             <li>
-              <i className="fa-solid fa-droplet"></i> :{" "}
+              <i className="fa-solid fa-droplet mt-4"></i> :{" "}
               {Math.round(props.data.humidity)}%
             </li>
             <li>
@@ -24,8 +25,11 @@ export default function WeatherData(props) {
         </div>
         <div className="col-6 current-weather">
           <ul>
-            <li className="current-temperature">
-              {Math.round(props.data.temperature)}℃ | ℉
+            <li>
+              <span className="current-temperature">
+                {Math.round(props.data.temperature)}
+              </span>
+              <a href="#">℃ </a>|<a href="#">℉</a>
             </li>
             <li>
               <CurrentWeatherImage
