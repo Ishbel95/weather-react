@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
 import "./images/cloudy.png";
+import LastUpdated from "./LastUpdated";
 // import "./images/clearsky.png";
 // import "./images/fog.png";
 // import "./images/raining.png";
@@ -10,19 +11,28 @@ import "./images/cloudy.png";
 // import "./images/sunandcloud.png";
 // import "./images/thunder.png";
 
-export default function WeatherSearch() {
+export default function WeatherSearch(props) {
   const [submit, setSubmit] = useState(false);
-  const [city, setCity] = useState("City");
+  const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
+
+  function search() {
+    let units = "metric";
+    let apiKey = "c30a0fffae157b2512a9a148a2b81dbf";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${units}`;
+    axios.get(url).then(showWeather);
+  }
 
   function showWeather(response) {
     let iconSource = response.data.weather[0].icon;
+
     setWeather({
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       feel: response.data.main.feels_like,
+      date: new Date(response.data.dt * 1000),
       icon: `http://openweathermap.org/img/wn/${iconSource}@2x.png`,
     });
 
@@ -59,10 +69,7 @@ export default function WeatherSearch() {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "c30a0fffae157b2512a9a148a2b81dbf";
-
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(url).then(showWeather);
+    search();
   }
   let form = (
     <div className="WeatherSearch">
@@ -109,7 +116,7 @@ export default function WeatherSearch() {
         <h1>{city}</h1>
         <div className="row">
           <div className="col-6 weather-details">
-            <h2 className="LastUpdated">Last updated: 12:05</h2>
+            <LastUpdated currentDate={weather.date} />
             <ul>
               <li>
                 <i className="fa-solid fa-droplet"></i> :{" "}
@@ -139,39 +146,10 @@ export default function WeatherSearch() {
       </div>
     );
   } else {
-    return (
-      <div className="WeatherSearch">
-        {form}
-        <h1>London</h1>
-
-        <div className="row">
-          <div className="col-6 weather-details">
-            <h2 className="LastUpdated">Last updated: 12:05</h2>
-            <ul>
-              <li>
-                <i className="fa-solid fa-droplet"></i> : {Math.round(2.5)}%
-              </li>
-              <li>
-                <i className="fa-solid fa-wind"></i> : {Math.round(10)}km/h
-              </li>
-              <li>Feels like: {Math.round(15.6)}℃</li>
-            </ul>
-          </div>
-          <div className="col-6 current-weather">
-            <ul>
-              <li>{Math.round(14)}℃</li>
-              <li>
-                <img
-                  className="current-weather-image"
-                  src={require("./images/cloudy.png")}
-                  alt={weather.description}
-                />
-              </li>
-              <li>Cloudy</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    );
+    let units = "metric";
+    let apiKey = "c30a0fffae157b2512a9a148a2b81dbf";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${units}`;
+    axios.get(url).then(showWeather);
+    return <p>loading...</p>;
   }
 }

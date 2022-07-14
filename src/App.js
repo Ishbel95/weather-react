@@ -8,7 +8,7 @@ function App() {
     <div className="weather-app">
       <header className="App-header"></header>
       <main>
-        <WeatherSearch />
+        <WeatherSearch defaultCity="London" />
       </main>
       <footer>
         <OpenSource />
