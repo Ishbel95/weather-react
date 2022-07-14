@@ -1,9 +1,10 @@
 :root {
   --primary-color: rgb(45, 44, 44);
+  --primary-font: "Quicksand", sans-serif;
 }
 
 .weather-app {
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--primary-font);
   color: var(--primary-color);
   border: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   padding: 1em;

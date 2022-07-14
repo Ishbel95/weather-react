@@ -66,21 +66,22 @@ export default function WeatherSearch() {
   }
   let form = (
     <div className="WeatherSearch">
-      <nav className="navbar navbar-light d-flex">
-        <div className="container-fluid justify-content-between">
-          <form className="d-flex" id="search-form" onSubmit={handleSubmit}>
-            <input
-              className="form-control"
-              type="search"
-              placeholder="Enter a City"
-              id="search-input"
-              title="Search a city"
-              onChange={updateCity}
-            />
-            <div className="d-flex">
+      <nav className="navigation navbar-light">
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-9">
+              <input
+                className="form-control search-input"
+                type="search"
+                placeholder="Enter a City"
+                title="Search a city"
+                onChange={updateCity}
+              />
+            </div>
+            <div className="col-3">
               <button
                 id="search-button"
-                className="btn button-one"
+                className="btn me-3"
                 type="submit"
                 title="Search button"
               >
@@ -95,8 +96,8 @@ export default function WeatherSearch() {
                 <i className="fa-solid fa-location-arrow"></i>
               </button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </nav>
     </div>
   );
