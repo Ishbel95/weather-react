@@ -2,6 +2,7 @@ import React from "react";
 import LastUpdated from "./LastUpdated";
 import CurrentWeatherImage from "./CurrentWeatherImage";
 import "./WeatherData.css";
+import TemperatureConversion from "./TemperatureConversion";
 
 export default function WeatherData(props) {
   return (
@@ -26,10 +27,7 @@ export default function WeatherData(props) {
         <div className="col-6 current-weather">
           <ul>
             <li>
-              <span className="current-temperature">
-                {Math.round(props.data.temperature)}
-              </span>
-              <a href="#">℃ </a>|<a href="#">℉</a>
+              <TemperatureConversion celsius={props.data.temperature} />
             </li>
             <li>
               <CurrentWeatherImage
