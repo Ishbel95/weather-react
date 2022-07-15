@@ -7,9 +7,9 @@ import TemperatureConversion from "./TemperatureConversion";
 export default function WeatherData(props) {
   return (
     <div className="WeatherData">
-      <h1 className="mt-1">{props.data.city}</h1>
       <div className="row">
         <div className="col-6 weather-details mt-1">
+          <h1 className="mt-1">{props.data.city}</h1>
           <LastUpdated currentDate={props.data.date} />
           <ul>
             <li>
@@ -24,7 +24,7 @@ export default function WeatherData(props) {
             <li>Feels like: {Math.round(props.data.feel)}℃</li>
           </ul>
         </div>
-        <div className="col-6 current-weather">
+        <div className="col-6 current-weather mt-5">
           <ul>
             <li>
               <TemperatureConversion celsius={props.data.temperature} />
