@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
+import WeatherForecast from "./WeatherForecast";
 
 import WeatherData from "./WeatherData";
 
@@ -80,6 +81,7 @@ export default function WeatherSearch(props) {
       <div className="WeatherSearch">
         {form}
         <WeatherData data={weather} />
+        <WeatherForecast />
       </div>
     );
   } else {

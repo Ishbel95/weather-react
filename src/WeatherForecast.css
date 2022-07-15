@@ -1,0 +1,32 @@
+.WeatherForecast .row {
+  margin: 1%;
+  padding: 2%;
+  border: 2px solid linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100% 0.2);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100% 0.2);
+  box-shadow: 1px 1px 8px rgb(179, 179, 179);
+}
+
+.WeatherForecast .col-2 {
+  background-color: #fff;
+  border-radius: 5%;
+}
+
+.weather-forecast-display {
+  list-style-type: none;
+  text-align: center;
+  padding: 1%;
+}
+.weather-forecast-day {
+  margin-top: 10%;
+}
+.weather-forecast-image {
+  width: 90%;
+  margin: 10% auto;
+}
+
+.weather-forecast-max-temp {
+  font-weight: 700;
+}
+.weather-forecast-min-temp {
+  font-weight: 200;
+}
