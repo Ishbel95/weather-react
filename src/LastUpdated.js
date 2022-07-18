@@ -17,12 +17,13 @@ export default function LastUpdated(props) {
   let day = days[props.currentDate.getDay()];
   let hours = props.currentDate.getHours();
   let minutes = props.currentDate.getMinutes();
-  if (minutes <= 0) {
+  if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  if (hours < 0) {
+  if (hours < 10) {
     hours = `0${hours}`;
   }
+
   return (
     <div>
       <h2 className="LastUpdated">
