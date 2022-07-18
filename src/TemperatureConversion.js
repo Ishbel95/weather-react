@@ -22,6 +22,7 @@ export default function TemperatureConversion(props) {
             href="/"
             onClick={convertFahrenheit}
             className="text-decoration-none"
+            rel="noopener noreferrer"
           >
             ℉
           </a>
@@ -34,7 +35,12 @@ export default function TemperatureConversion(props) {
       <div>
         <span className="current-temperature">{Math.round(fahrenheit)}</span>
         <span className="unit">
-          <a href="/" onClick={convertCelsius} className="text-decoration-none">
+          <a
+            href="/"
+            onClick={convertCelsius}
+            className="text-decoration-none"
+            rel="noopener noreferrer"
+          >
             ℃{" "}
           </a>
           | ℉
