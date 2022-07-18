@@ -18,6 +18,7 @@ export default function WeatherSearch(props) {
   }
 
   function showWeather(response) {
+    console.log(response);
     setWeather({
       city: response.data.name,
       temperature: response.data.main.temp,
@@ -27,6 +28,7 @@ export default function WeatherSearch(props) {
       feel: response.data.main.feels_like,
       date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
+      coordinates: response.data.coord,
     });
 
     setSubmit(true);
@@ -81,7 +83,7 @@ export default function WeatherSearch(props) {
       <div className="WeatherSearch">
         {form}
         <WeatherData data={weather} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
