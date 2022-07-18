@@ -18,7 +18,6 @@ export default function WeatherSearch(props) {
   }
 
   function showWeather(response) {
-    console.log(response);
     setWeather({
       city: response.data.name,
       temperature: response.data.main.temp,
