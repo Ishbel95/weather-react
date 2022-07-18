@@ -1,0 +1,57 @@
+.cloud-container i {
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
+  margin: 7% auto;
+}
+.cloud-row {
+  width: 900px;
+}
+.cloud-top {
+  animation: move-top 15s ease-in-out infinite alternate;
+}
+@keyframes move-top {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}
+.cloud-middle {
+  animation: move-middle 18s ease-in-out infinite alternate;
+}
+@keyframes move-middle {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}
+.cloud-bottom {
+  animation: move-bottom 21s ease-in-out infinite alternate;
+}
+@keyframes move-bottom {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}

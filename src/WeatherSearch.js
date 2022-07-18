@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
 import WeatherForecast from "./WeatherForecast";
+import WeatherAnimation from "./WeatherAnimation";
 
 import WeatherData from "./WeatherData";
 
@@ -84,6 +85,7 @@ export default function WeatherSearch(props) {
         {form}
         <WeatherData data={weather} />
         <WeatherForecast coordinates={weather.coordinates} />
+        <WeatherAnimation icon={weather.icon} />
       </div>
     );
   } else {

@@ -1,0 +1,55 @@
+.sun-cloud {
+}
+
+.sun-cloud-sun {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  padding-top: 5%;
+  animation: spin 35s infinite alternate ease-in-out;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(200deg);
+  }
+}
+.sun-cloud-cloud-top {
+  font-size: 9rem;
+  color: #fff;
+  text-shadow: 0 0 8px rgb(216, 216, 216);
+  position: relative;
+  bottom: 1.5em;
+  left: 15%;
+  animation: move-left 5s infinite alternate;
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+.sun-cloud-cloud-bottom {
+  font-size: 9rem;
+  color: #fff;
+  position: relative;
+  left: 5%;
+  bottom: 1.3em;
+  text-shadow: 0 0 8px rgb(216, 216, 216);
+  animation: move-right 5s infinite alternate;
+}
+
+@keyframes move-right {
+  0% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(30px);
+  }
+}

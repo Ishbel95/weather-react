@@ -1,0 +1,58 @@
+.rain-cloud {
+  font-size: 9rem;
+  color: rgb(211, 211, 211);
+  text-shadow: 0 0 8px #fff;
+  display: block;
+  text-align: center;
+  z-index: 0;
+}
+
+.rain-one,
+.rain-two,
+.rain-three {
+  font-size: 3rem;
+  position: relative;
+  left: 40%;
+  bottom: 1.5em;
+  z-index: 1;
+}
+
+.rain-one {
+  color: #0cabc6;
+  animation: drop-fast 2.5s infinite ease-in-out;
+}
+@keyframes drop-fast {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(90px);
+    text-shadow: 0 0 8px #54e1fa;
+  }
+}
+.rain-two {
+  color: #0ebbda;
+  animation: drop-moderate 2s infinite ease-in-out;
+}
+@keyframes drop-moderate {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(90px);
+    text-shadow: 0 0 8px #54e1fa;
+  }
+}
+.rain-three {
+  color: #10dbff;
+  animation: drop-slow 3s infinite ease-in-out;
+}
+@keyframes drop-slow {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(90px);
+    text-shadow: 0 0 8px #54e1fa;
+  }
+}
