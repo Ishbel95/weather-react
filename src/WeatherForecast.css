@@ -9,24 +9,5 @@
 .WeatherForecast .col-2 {
   background-color: #fff;
   border-radius: 5%;
-}
-
-.weather-forecast-display {
-  list-style-type: none;
-  text-align: center;
-  padding: 1%;
-}
-.weather-forecast-day {
-  margin-top: 10%;
-}
-.weather-forecast-image {
-  width: 90%;
-  margin: 10% auto;
-}
-
-.weather-forecast-max-temp {
-  font-weight: 700;
-}
-.weather-forecast-min-temp {
-  font-weight: 200;
+  margin: 0 auto;
 }
