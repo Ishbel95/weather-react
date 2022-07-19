@@ -1,14 +1,16 @@
 import React from "react";
 import "./Raining.css";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Raining() {
   return (
     <div className="rain">
-      <i className="fa-solid fa-cloud rain-cloud"></i>
-
-      <i className="fa-solid fa-droplet rain-one"></i>
-      <i className="fa-solid fa-droplet rain-two"></i>
-      <i className="fa-solid fa-droplet rain-three"></i>
+      <Player
+        autoplay
+        loop
+        src="https://assets9.lottiefiles.com/temp/lf20_rpC1Rd.json"
+        style={{ height: "300px", width: "300px" }}
+      ></Player>
     </div>
   );
 }
