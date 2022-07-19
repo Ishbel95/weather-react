@@ -1,8 +1,6 @@
 .OpenSource {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 9;
+  display: block;
+  text-align: center;
 }
 .OpenSource a {
   text-decoration: none;

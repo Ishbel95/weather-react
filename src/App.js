@@ -5,11 +5,12 @@ import React from "react";
 
 function App() {
   return (
-    <div className="weather-app">
-      <header className="App-header"></header>
-      <main>
-        <WeatherSearch defaultCity="London" />
-      </main>
+    <div className="App">
+      <div className="weather-app">
+        <main>
+          <WeatherSearch defaultCity="London" />
+        </main>
+      </div>
       <footer>
         <OpenSource />
       </footer>

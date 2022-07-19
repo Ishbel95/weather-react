@@ -13,7 +13,7 @@ export default function OpenSource() {
         >
           Open-source code
         </a>
-        {""} by Ishbel Fahey-Theaker-Front end Developer
+        {""} by Ishbel Fahey-Theaker
       </span>
     </div>
   );
