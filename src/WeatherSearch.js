@@ -11,6 +11,20 @@ export default function WeatherSearch(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({});
 
+  function geoUrl(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiKey = "1244d051e74e0f794e1452d1e9bf9e68";
+    let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
+    let unit = "metric";
+    let url = `${apiEndPoint}?lat=${latitude}&lon=${longitude}&units=${unit}&appid=${apiKey}`;
+    axios.get(url).then(showWeather);
+  }
+
+  function getGeoLocation(event) {
+    navigator.geolocation.getCurrentPosition(geoUrl);
+  }
+
   function search() {
     let units = "metric";
     let apiKey = "1244d051e74e0f794e1452d1e9bf9e68";
@@ -69,6 +83,7 @@ export default function WeatherSearch(props) {
                 className="btn"
                 type="submit"
                 title="Geo-location button"
+                onClick={getGeoLocation}
               >
                 <i className="fa-solid fa-location-arrow"></i>
               </button>
