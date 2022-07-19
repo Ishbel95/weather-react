@@ -40,29 +40,3 @@ export default function CurrentWeatherImage(props) {
     </div>
   );
 }
-
-// if (props.icon === "01d" || props.icon === "01n") {
-//   icon = require(`./images/clearsky.png`);
-// } else if (props.icon === "02d" || props.icon === "02n") {
-//   icon = require(`./images/sunandcloud.png`);
-// } else if (
-//   props.icon === "03d" ||
-//   props.icon === "03n" ||
-//   props.icon === "04d" ||
-//   props.icon === "04n"
-// ) {
-//   icon = require(`./images/cloudy.png`);
-// } else if (
-//   props.icon === "09d" ||
-//   props.icon === "09n" ||
-//   props.icon === "10d" ||
-//   props.icon === "10n"
-// ) {
-//   icon = require(`./images/raining.png`);
-// } else if (props.icon === "11d" || props.icon === "11n") {
-//   icon = require(`./images/thunder.png`);
-// } else if (props.icon === "13d" || props.icon === "13n") {
-//   icon = require(`./images/snowing.png`);
-// } else if (props.icon === "50d" || props.icon === "50n") {
-//   icon = require(`./images/fog.png`);
-// }
