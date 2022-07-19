@@ -1,9 +1,9 @@
 h1 {
-  font-size: 2.9rem !important;
-  letter-spacing: 5px;
+  font-size: 3rem !important;
+  letter-spacing: 0.1em;
   font-weight: 900;
-  line-height: 1;
-  padding: 0.2em 0.5em;
+  line-height: 1.3;
+  padding: 0.1em 0.4em;
 }
 
 .weather-details ul {

@@ -4,12 +4,12 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Thunder() {
   return (
-    <div className="thunder">
+    <div className="Thunder">
       <Player
         autoplay
         loop
         src="https://assets9.lottiefiles.com/temp/lf20_Kuot2e.json"
-        style={{ height: "300px", width: "300px" }}
+        style={{ width: "70%" }}
       ></Player>
     </div>
   );
