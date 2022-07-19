@@ -28,5 +28,5 @@ export default function WeatherAnimation(props) {
     "50d": <Fog />,
     "50n": <Fog />,
   };
-  return <div className="">{animationMapping[props.icon]}</div>;
+  return <div>{animationMapping[props.icon]}</div>;
 }
