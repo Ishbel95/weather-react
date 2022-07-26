@@ -58,37 +58,33 @@ export default function WeatherSearch(props) {
   let form = (
     <div className="WeatherSearch">
       <nav className="navigation navbar-light">
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-9">
-              <input
-                className="form-control search-input"
-                type="search"
-                placeholder="Enter a City"
-                title="Search a city"
-                onChange={updateCity}
-              />
-            </div>
-            <div className="col-3">
-              <button
-                id="search-button"
-                className="btn me-3"
-                type="submit"
-                title="Search button"
-              >
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <button
-                id="geo-location"
-                className="btn"
-                type="submit"
-                title="Geo-location button"
-                onClick={getGeoLocation}
-              >
-                <i className="fa-solid fa-location-arrow"></i>
-              </button>
-            </div>
-          </div>
+        <form onSubmit={handleSubmit} className="d-flex">
+          <input
+            className="form-control search-input"
+            type="search"
+            placeholder="Enter a City"
+            title="Search a city"
+            onChange={updateCity}
+          />
+
+          <button
+            id="search-button"
+            className="btn ms-2"
+            type="submit"
+            title="Search button"
+          >
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <button
+            id="geo-location"
+            className="btn ms-2"
+            type="submit"
+            title="Geo-location button"
+            onClick={getGeoLocation}
+          >
+            <i className="fa-solid fa-location-arrow"></i>
+          </button>
         </form>
       </nav>
     </div>
