@@ -1,9 +1,8 @@
 import React from "react";
 import "./LastUpdated.css";
 
+// render last updated component using props
 export default function LastUpdated(props) {
-  console.log(props.currentDate);
-
   let days = [
     "Sunday",
     "Monday",

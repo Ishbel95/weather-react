@@ -7,6 +7,9 @@ import Thunder from "./Thunder";
 import Snowing from "./Snowing";
 import Fog from "./Fog";
 
+// return animation component using props.icon as index.
+// object of animations, using the api icons as keys and components as values
+
 export default function WeatherAnimation(props) {
   const animationMapping = {
     "01d": <SunAnimation />,

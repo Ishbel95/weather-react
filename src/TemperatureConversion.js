@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import "./TemperatureConversion.css";
 
 export default function TemperatureConversion(props) {
+  // state management
   const [unit, setUnit] = useState("celsius");
+  // set the unit to celsius
   function convertCelsius(event) {
     event.preventDefault();
     setUnit("celsius");
   }
+  // set the unit to fahrenheit
   function convertFahrenheit(event) {
     event.preventDefault();
     setUnit("fahrenheit");
   }
-
+  // conditionally render the current temperature depending on the unit
   if (unit === "celsius") {
     return (
       <div>

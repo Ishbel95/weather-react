@@ -7,10 +7,13 @@ import WeatherAnimation from "./WeatherAnimation";
 import WeatherData from "./WeatherData";
 
 export default function WeatherSearch(props) {
+  // state management
   const [submit, setSubmit] = useState(false);
+  // initialize city search with default city from props
   const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({});
 
+  // get geolocation
   function geoUrl(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
@@ -24,14 +27,14 @@ export default function WeatherSearch(props) {
   function getGeoLocation(event) {
     navigator.geolocation.getCurrentPosition(geoUrl);
   }
-
+  // search for api response using template literals and state
   function search() {
     let units = "metric";
     let apiKey = "1244d051e74e0f794e1452d1e9bf9e68";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(url).then(showWeather);
   }
-
+  // setWeather object values to response from api
   function showWeather(response) {
     setWeather({
       city: response.data.name,
@@ -47,10 +50,11 @@ export default function WeatherSearch(props) {
 
     setSubmit(true);
   }
-
+  // use value of form input to setCity
   function updateCity(event) {
     setCity(event.target.value);
   }
+  // handle the submit event and call search function to get api response
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -89,7 +93,7 @@ export default function WeatherSearch(props) {
       </nav>
     </div>
   );
-
+  // if submit state is true, render the weather app, else render loading
   if (submit) {
     return (
       <div className="WeatherSearch">

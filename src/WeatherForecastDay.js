@@ -2,6 +2,7 @@ import React from "react";
 import CurrentWeatherImage from "./CurrentWeatherImage";
 import "./WeatherForecastDay.css";
 
+// set day of week and min/max temp on forecast days
 export default function WeatherForecastDay(props) {
   function maxTemperature() {
     let max = Math.round(props.data.temp.max);

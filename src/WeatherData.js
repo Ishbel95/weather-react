@@ -4,6 +4,7 @@ import CurrentWeatherImage from "./CurrentWeatherImage";
 import "./WeatherData.css";
 import TemperatureConversion from "./TemperatureConversion";
 
+// render weather information using props made up of api response
 export default function WeatherData(props) {
   return (
     <div className="WeatherData">
